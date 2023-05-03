@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+    <bean id="auto_a" class="esempio.application.context.AutoA"></bean>
+    <bean id="auto_b" class="esempio.application.context.AutoB" autowire="byName"></bean>
+  	<bean id="auto_c" class="esempio.application.context.AutoC"></bean>
+  	<bean id="auto_e" class="esempio.application.context.AutoE" autowire="constructor"></bean>
+  	
+   
+
+</beans>
