@@ -10,8 +10,9 @@ public class Main {
 		//new Main();
 		//new Main().beanTestZerouno();
 		//new Main().beanTestXml();
+		//new Main().beanAutowired();
 		
-		new Main().beanAutowired();
+		new Main().beanConSingleton();
 	}
 	
 	public Main() {
@@ -45,14 +46,23 @@ public class Main {
 		//--così ritorna null ....
 		b.setAuto_A(new AutoA());
 		b.setAuto_C(new AutoC());
-		
 		System.out.println(b.Saluto());
-	    
-		
 		//---Testato Autowire con il costruttore ...
 		AutoE auto_e = app.getBean("auto_e",AutoE.class);
-		
 		System.out.println(auto_e.saLuto());
+	}
+	
+	public void  beanConSingleton() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("metaXml_Scope.xml");
+		BeanSingleton beanSingolo = context.getBean("bean_singleton",BeanSingleton.class);
+		beanSingolo.setMessaggio("ASSORETA");
+		System.out.println(beanSingolo.Saluti());
+		
+		
+		BeanSingleton beanSingolo_01 = context.getBean("bean_singleton",BeanSingleton.class);
+		//Non gli assegnamo nulla...
+		//beanSingolo.setMessaggio("ASSORETA");
+		System.out.println(beanSingolo_01.Saluti());
 		
 		
 		
