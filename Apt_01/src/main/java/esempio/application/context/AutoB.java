@@ -4,6 +4,7 @@ public class AutoB {
 	private AutoA auto_a;
 	private AutoC auto_c;
 	
+	//==Esempio con il setter
 	
 	public String Saluto() {
 		return "Ciao Sono AutoB --->E mi sono importato -->"+ auto_a.Saluto() + "===" + auto_c.Saluto();

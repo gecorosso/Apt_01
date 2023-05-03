@@ -39,8 +39,10 @@ public class Main {
 	public void beanAutowired() {
 		ApplicationContext app = new ClassPathXmlApplicationContext("metaXml_Autowire.xml");
 		
-		
+		//--Esempio di Autoware con il setter
 		AutoB b = app.getBean("auto_b",AutoB.class);
+		//--Correzione che si differenzia dall esempio del corso se non faccio
+		//--così ritorna null ....
 		b.setAuto_A(new AutoA());
 		b.setAuto_C(new AutoC());
 		

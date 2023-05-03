@@ -3,6 +3,8 @@ package esempio.application.context;
 public class AutoE {
 	private AutoC auto_c;
     
+	//==Esempio autoware con DI del costruttore! 
+	
 	
 	public AutoE(AutoC auto_c) {
 		super();
