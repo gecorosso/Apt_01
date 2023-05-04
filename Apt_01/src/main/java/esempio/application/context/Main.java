@@ -13,8 +13,8 @@ public class Main {
 		//new Main().beanTestXml();
 		//new Main().beanAutowired();		
 		//new Main().beanConSingleton();
-		new Main().PropertyTest();
-		
+		//new Main().PropertyTest();
+		new Main().testAnnotation();
 		
 	}
 	
@@ -99,6 +99,12 @@ public class Main {
 		property.Saluti();
 		
 		
+	}
+	
+	public void testAnnotation() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("metaXml_Annotation.xml");
+		BeanAnnotation bean_notazione = context.getBean("my_bean_annotation", BeanAnnotation.class);
+		bean_notazione.Saluti();
 	}
 	
 
