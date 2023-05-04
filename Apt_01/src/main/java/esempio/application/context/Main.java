@@ -3,6 +3,7 @@ package esempio.application.context;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 public class Main {
 
@@ -10,9 +11,11 @@ public class Main {
 		//new Main();
 		//new Main().beanTestZerouno();
 		//new Main().beanTestXml();
-		//new Main().beanAutowired();
+		//new Main().beanAutowired();		
+		//new Main().beanConSingleton();
+		new Main().PropertyTest();
 		
-		new Main().beanConSingleton();
+		
 	}
 	
 	public Main() {
@@ -87,6 +90,14 @@ public class Main {
 	     //beanProto_01.setMessaggio("Ciao Sono PrototypeXX");
 	     //lo legge
 	     System.out.println(beanProto_01.Saluto());	     
+		
+	}
+	
+	public void PropertyTest() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("metaXml_Property.xml");
+		BeanProperty property = context.getBean("myProperty",BeanProperty.class);
+		property.Saluti();
+		
 		
 	}
 	
