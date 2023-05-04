@@ -61,13 +61,13 @@ public class Main {
 		//lo scrive
 		System.out.println(beanSingolo.Saluti());
 		
-		//Rigenera il bean
+		//Rigenera il bean 
 		BeanSingleton beanSingolo_01 = context.getBean("bean_singleton",BeanSingleton.class);
 		//Non gli assegnamo nulla...
 		//beanSingolo.setMessaggio("ASSORETA");
 		//Riscrive 
 		System.out.println(beanSingolo_01.Saluti());
-		//Permane lo stesso messaggio...
+		//Permane lo stesso messaggio... pur essendo una nuova istanza
 		//proprio perchè il container fà una istanza del Bean e lo salva nella cache
 		//e lo dimostra in seconda System.out.
 		
@@ -81,19 +81,12 @@ public class Main {
 	     //lo legge
 	     System.out.println(beanProto.Saluto()+"<-");
 	     
-	     //generiamo una nuova istanza
+	     //generiamo una nuova istanza con Prototype!!!!
 	     BeanPrototype beanProto_01 = context.getBean("bean_protoType",BeanPrototype.class);
 	     //lo Scrive
 	     //beanProto_01.setMessaggio("Ciao Sono PrototypeXX");
 	     //lo legge
-	     System.out.println(beanProto_01.Saluto());
-	     
-	     
-	     
-	     
-	     
-	     
-	     
+	     System.out.println(beanProto_01.Saluto());	     
 		
 	}
 	
