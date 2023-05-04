@@ -54,17 +54,46 @@ public class Main {
 	
 	public void  beanConSingleton() {
 		ApplicationContext context = new ClassPathXmlApplicationContext("metaXml_Scope.xml");
+		
+		//Genera in singleton
 		BeanSingleton beanSingolo = context.getBean("bean_singleton",BeanSingleton.class);
 		beanSingolo.setMessaggio("ASSORETA");
+		//lo scrive
 		System.out.println(beanSingolo.Saluti());
 		
-		
+		//Rigenera il bean
 		BeanSingleton beanSingolo_01 = context.getBean("bean_singleton",BeanSingleton.class);
 		//Non gli assegnamo nulla...
 		//beanSingolo.setMessaggio("ASSORETA");
+		//Riscrive 
 		System.out.println(beanSingolo_01.Saluti());
+		//Permane lo stesso messaggio...
+		//proprio perchè il container fà una istanza del Bean e lo salva nella cache
+		//e lo dimostra in seconda System.out.
 		
+		/*
+			Funzionamento del Prototype
+		*/
 		
+	     BeanPrototype beanProto = context.getBean("bean_protoType",BeanPrototype.class);
+	     //Lo scrive
+	     beanProto.setMessaggio("Messaggio di Prototype");
+	     //lo legge
+	     System.out.println(beanProto.Saluto()+"<-");
+	     
+	     //generiamo una nuova istanza
+	     BeanPrototype beanProto_01 = context.getBean("bean_protoType",BeanPrototype.class);
+	     //lo Scrive
+	     //beanProto_01.setMessaggio("Ciao Sono PrototypeXX");
+	     //lo legge
+	     System.out.println(beanProto_01.Saluto());
+	     
+	     
+	     
+	     
+	     
+	     
+	     
 		
 	}
 	
