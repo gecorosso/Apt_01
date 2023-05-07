@@ -18,8 +18,8 @@ public class Main {
 		//new Main().PropertyTest();
 		//new Main().testAnnotation();
 		//testDi() testAnnotationDue();
-		new Main().testDi(); 
-		
+		//new Main().testDi(); 
+		new Main().dependsOn();
 	}
 	
 	public Main() {
@@ -129,8 +129,15 @@ public class Main {
 		
 		System.out.println(fs.StampaFattura());
 		System.out.println(doub.StampaDouble());
-		
-		
+	}
+	
+	public void dependsOn() {
+	 ApplicationContext context = new ClassPathXmlApplicationContext("dependsOn.xml");	
+	 D_Iniection.BeanA my_bean_a = context.getBean("bean_a", D_Iniection.BeanA.class);
+	 
+	 my_bean_a.meSsaggio();
+	 
+	 
 	}
 
 }
