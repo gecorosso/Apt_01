@@ -5,6 +5,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
+import esempio.application.context.autowire.OrdineService;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -14,7 +16,9 @@ public class Main {
 		//new Main().beanAutowired();		
 		//new Main().beanConSingleton();
 		//new Main().PropertyTest();
-		new Main().testAnnotation();
+		//new Main().testAnnotation();
+		//testDi() testAnnotationDue();
+		new Main().testDi(); 
 		
 	}
 	
@@ -107,5 +111,21 @@ public class Main {
 		bean_notazione.Saluti();
 	}
 	
+	public void testAnnotationDue() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("metaXml_Annotation.xml");
+		esempio.application.context.autowire.OrdineService os = context.getBean("ordine",esempio.application.context.autowire.OrdineService.class);
+		System.out.println(os.getOrdineInfo());
+		
+		Class<?> type = context.getType("prodotto");
+		
+		System.out.println(type.getName());
+		
+	}
+	
+	public void testDi() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("DI_Iniection_Metadati.xml");
+		D_Iniection.FatturaService fs = context.getBean("fattura", D_Iniection.FatturaService.class);
+		System.out.println(fs.StampaFattura());
+	}
 
 }
