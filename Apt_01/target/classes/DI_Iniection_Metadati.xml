@@ -16,6 +16,10 @@
 		<constructor-arg ref="ordine"></constructor-arg>
 		<constructor-arg ref="prodotto"></constructor-arg>
 	</bean>
+	
+	<bean id="doub" class="D_Iniection.DoubleService">
+		<constructor-arg type="double" value="125.58"></constructor-arg >
+	</bean>
    
 
 </beans>

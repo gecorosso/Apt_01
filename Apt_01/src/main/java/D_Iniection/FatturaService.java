@@ -13,4 +13,8 @@ public class FatturaService {
 	public String StampaFattura() {
 		 return os.myMessaggio("Sono Ordine Service")+"		"+ps.myMessaggio("Sono Prodotto Service");
 	}
+
+	
+	
+	
 }

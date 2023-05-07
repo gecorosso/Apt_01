@@ -125,7 +125,12 @@ public class Main {
 	public void testDi() {
 		ApplicationContext context = new ClassPathXmlApplicationContext("DI_Iniection_Metadati.xml");
 		D_Iniection.FatturaService fs = context.getBean("fattura", D_Iniection.FatturaService.class);
+		D_Iniection.DoubleService doub = context.getBean("doub",D_Iniection.DoubleService.class);
+		
 		System.out.println(fs.StampaFattura());
+		System.out.println(doub.StampaDouble());
+		
+		
 	}
 
 }
