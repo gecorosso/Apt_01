@@ -9,7 +9,10 @@
 
     <context:component-scan base-package="esempio.application.D_Iniection"/>
    
-    <bean id="bean_a" class="D_Iniection.BeanA" depends-on="bean_b" ></bean>
-	<bean id="bean_b" class="D_Iniection.BeanB"></bean>
+    <bean id="bean_di_A" class="D_Iniection.BeanAutoA"></bean>
+    <bean id="bean_di_B" class="D_Iniection.BeanAutoB" autowire="byName"></bean>
+    <bean id="bean_di_C" class="D_Iniection.BeanAutoC"></bean>
+	<bean id="bean_di_D" class="D_Iniection.BeanAutoD" autowire="byType"></bean>
+	<bean id="bean_di_E" class="D_Iniection.BeanAutoE" autowire="constructor"></bean>
 	
 </beans>

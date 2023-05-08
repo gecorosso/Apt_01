@@ -19,7 +19,8 @@ public class Main {
 		//new Main().testAnnotation();
 		//testDi() testAnnotationDue();
 		//new Main().testDi(); 
-		new Main().dependsOn();
+		//new Main().dependsOn();
+		new Main().newTestAutowire();
 	}
 	
 	public Main() {
@@ -134,10 +135,22 @@ public class Main {
 	public void dependsOn() {
 	 ApplicationContext context = new ClassPathXmlApplicationContext("dependsOn.xml");	
 	 D_Iniection.BeanA my_bean_a = context.getBean("bean_a", D_Iniection.BeanA.class);
-	 
 	 my_bean_a.meSsaggio();
-	 
-	 
 	}
 
+	public void newTestAutowire() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("autowire_iniection.xml");
+		
+		D_Iniection.BeanAutoB bb = context.getBean("bean_di_B",D_Iniection.BeanAutoB.class);
+		
+		D_Iniection.BeanAutoD dd = context.getBean("bean_di_D",D_Iniection.BeanAutoD.class);
+		D_Iniection.BeanAutoE ee = context.getBean("bean_di_E",D_Iniection.BeanAutoE.class);	
+		
+		
+		bb.Saluti();
+		dd.Saluti();
+		ee.Saluti();
+		
+	}
+	
 }
