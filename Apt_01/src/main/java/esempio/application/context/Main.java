@@ -20,7 +20,8 @@ public class Main {
 		//testDi() testAnnotationDue();
 		//new Main().testDi(); 
 		//new Main().dependsOn();
-		new Main().newTestAutowire();
+		//new Main().newTestAutowire();
+		new Main().newAutowireWhitoutXml();
 	}
 	
 	public Main() {
@@ -150,6 +151,17 @@ public class Main {
 		bb.Saluti();
 		dd.Saluti();
 		ee.Saluti();
+		
+	}
+	
+	public void newAutowireWhitoutXml() {
+		//autowire_NO_Conf_XML.xml
+		ApplicationContext context = new ClassPathXmlApplicationContext("autowire_NO_Conf_XML.xml");
+		
+		esempio.application.context.autowire.Auto myAuto=context.getBean("auto", esempio.application.context.autowire.Auto.class);
+		
+		System.out.println(myAuto.scriViMessaggio());
+		
 		
 	}
 	
