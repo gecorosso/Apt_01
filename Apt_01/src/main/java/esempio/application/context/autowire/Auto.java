@@ -1,11 +1,17 @@
 package esempio.application.context.autowire;
 
+import javax.annotation.Resource;
+import javax.inject.Inject;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component(value="auto")
 public class Auto {
+	@Autowired
 	private Motore motore;
+	
+	@Autowired
 	private Ruota ruota;
 	
 //	@Autowired
@@ -22,11 +28,11 @@ public class Auto {
 //		this.motore = motore;
 //	}
 	
-	@Autowired
-	public void metodoGenerico(Motore motore,Ruota ruota) {
-		this.motore = motore;
-		this.ruota = ruota;
-	}
+//	@Autowired
+//	public void metodoGenerico(Motore motore,Ruota ruota) {
+//		this.motore = motore;
+//		this.ruota = ruota;
+//	}
 	
 
 	public String scriViMessaggio() {

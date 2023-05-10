@@ -1,6 +1,9 @@
 package esempio.application.context;
 
+import javax.annotation.Resource;
+
 public class AutoB {
+	
 	private AutoA auto_a;
 	private AutoC auto_c;
 	
