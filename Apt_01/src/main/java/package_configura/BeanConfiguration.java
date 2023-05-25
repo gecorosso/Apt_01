@@ -8,11 +8,11 @@ import esempio.application.context.Calcoli;
 public class BeanConfiguration {
 	@Bean(name="somma")
 	public Calcoli getSomma() {
-		return new Calcoli();
+		return new Calcoli(0, 0, 0);
 	}
 	
 	@Bean(name="moltiplicazione")
 	public Calcoli getMoltiplica() {
-		return new Calcoli();
+		return new Calcoli(0, 0, 0);
 	}
 }

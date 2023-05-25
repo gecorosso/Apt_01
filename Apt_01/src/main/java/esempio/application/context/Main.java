@@ -11,7 +11,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		//new Main();
-		//new Main().beanTestZerouno();
+		new Main().beanTestZerouno();
 		//new Main().beanTestXml();
 		//new Main().beanAutowired();		
 		//new Main().beanConSingleton();
@@ -21,7 +21,7 @@ public class Main {
 		//new Main().testDi(); 
 		//new Main().dependsOn();
 		//new Main().newTestAutowire();
-		new Main().newAutowireWhitoutXml();
+		//new Main().newAutowireWhitoutXml();
 	}
 	
 	public Main() {
@@ -33,6 +33,8 @@ public class Main {
 	public void beanTestZerouno() {
 		ApplicationContext app = new AnnotationConfigApplicationContext(package_configura.BeanConfiguration.class);
 		Calcoli calc = app.getBean("somma",Calcoli.class);
+		
+		
 		
 		System.out.println(calc.sommaToria(10, 50));
 		System.out.println(calc.moltiPlicazione(2, 11));
